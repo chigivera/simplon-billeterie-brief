@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Front-end</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+<link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+    <section class="header">
+        <div class="logo">
+            <img src="https://www.guichet.com/static/media/logo.a21b450f74466c794f4f.png" alt="LOGO_GUICHET">
+        </div>
+        <div class="details">
+            <div class="">
+                <img src="data:image/png;base64,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" alt="LOGO">
+                <p class="roboto-bold">Guichet Magazine</p>
+            </div>
+            <div class="">
+                <i class="ri-questionnaire-line"></i>                
+                <p class="roboto-bold">Qui Sommes-nous ?</p>
+
+            </div>
+            <div class="panier">
+                <i class="ri-shopping-bag-line"></i>
+                <h3>Panier</h3>
+            </div>
+        </div>
+    </section>
+    <nav class="nav-bar">
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+        <a href="/index.html"> Accueil </a>
+        <a href="/index.html"> Concerts & Festivals </a>
+        <a href="/index.html"> Théâtre & Humour </a>
+        <a href="/index.html"> Formations </a>
+        <a href="/index.html"> Salons et congrès </a>
+        <a href="/index.html"> Famille & Loisirs </a>
+        <a href="/index.html"> Sport </a>
+        <a href="/index.html"> Cinéma </a>
+        <a href="/index.html"> Voyage </a>
+        <a href="/index.html"> Saint-Valentin </a>
+        <div class="">  </div>
+        <div class="panier">
+          
+            <h3>Guichet store</h3>
+        </div>
+        <div class="">  </div>
+    </nav>
+    <section class="hero">
+        <div class="slider-wrapper">
+            <div class="slider">
+                <img class="slider-img" src="https://gcdn.imgix.net/events/gnaoua-khamlia-a-oujda-1.jpg?w=450&amp;h=450&amp;fit=crop&amp;crop=entropy&amp;auto=format,compress&amp;q=80" alt="&quot;Gnaoua Khamlia&quot; à Oujda">
+                <img class="slider-img" src="https://gcdn.imgix.net/events/humouraji-tour-ramadan-2024-a-rabat-3.png?w=450&amp;h=450&amp;fit=crop&amp;crop=entropy&amp;auto=format,compress&amp;q=80" alt="Humouraji Tour Ramadan 2024 à Rabat">
+                <img class="slider-img" src="https://gcdn.imgix.net/events/garou-escale-a-casablanca.jpg?w=450&amp;h=450&amp;fit=crop&amp;crop=entropy&amp;auto=format,compress&amp;q=80" alt="GAROU : ESCALE A CASABLANCA">
+                <img class="slider-img" src="https://gcdn.imgix.net/events/le-roi-lion-le-spectacle-au-succes-planetaire-11h-1.jpeg?w=450&amp;h=450&amp;fit=crop&amp;crop=entropy&amp;auto=format,compress&amp;q=80" alt="LE ROI LION - LE SPECTACLE AU SUCCÈS PLANÉTAIRE  (11h)">
+                <img class="slider-img" src="https://gcdn.imgix.net/events/lclika-f-swisra-a-casablanca.jpeg?w=450&amp;h=450&amp;fit=crop&amp;crop=entropy&amp;auto=format,compress&amp;q=80" alt="&quot;L'CLIKA F SWISRA&quot; à Casablanca">
+                <img class="slider-img" src="https://gcdn.imgix.net/events/origins-summer-2024-1.png?w=450&amp;h=450&amp;fit=crop&amp;crop=entropy&amp;auto=format,compress&amp;q=80" alt="Origins Summer 2024">
+                <img class="slider-img" src="https://gcdn.imgix.net/events/oum-en-concert-a-casablanca-1.jpg?w=450&amp;h=450&amp;fit=crop&amp;crop=entropy&amp;auto=format,compress&amp;q=80" alt="OUM en concert à Casablanca">
+                <img class="slider-img" src="https://gcdn.imgix.net/events/sabotage-presents-agafay-storm.png?w=450&amp;h=450&amp;fit=crop&amp;crop=entropy&amp;auto=format,compress&amp;q=80" alt="SABOTAGE presents AGAFAY STORM">
+                <img class="slider-img" src="https://gcdn.imgix.net/events/rire-musique-avec-hassan-el-fed-et-lhaj-said-berrada-a-casablanca-1.png?w=450&amp;h=450&amp;fit=crop&amp;crop=entropy&amp;auto=format,compress&amp;q=80" alt="Rire Musique avec Hassan el fed et Lhaj Said Berrada à Casablanca">
+                <img class="slider-img" src="https://gcdn.imgix.net/events/abdelkader-secteur-marhba-a-rabat-1.png?w=450&amp;h=450&amp;fit=crop&amp;crop=entropy&amp;auto=format,compress&amp;q=80" alt="Abdelkader Secteur &quot;Marhba&quot; à Rabat">
+
+            </div>
+            <div class="slider-nav">
+                <a href="#" id="slide-1"></a>
+                <a href="#" id="slide-2"></a>
+                <a href="#" id="slide-3"></a>
+                <a href="#" id="slide-4"></a>
+                <a href="#" id="slide-5"></a>
+            </div>
+        </div>
+    </section>
+    <main>
+        <div class="container">
+            <div class="row">
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class="card">
+                        <div class="card-image">
+                          <img src="https://gcdn.imgix.net/events/grande-soiree-soufie-avec-la-zaouia-kadirya-boutchichia-a-meknes-2.jpeg?w=900&h=600&fit=clip&auto=format,compress&q=80" alt="Event">
+                        </div>
+                        <div class="card-details">
+                          <div class="genre roboto-black">Concerts & Festival</div>
+                          <div class="title roboto-bold ">Grande soirée Soufie avec la ZAOUIA KADIRYA</div>
+                          <div class="location roboto-bold"><i class="ri-map-pin-2-fill"></i> Rabat, <span class="sub-location roboto-thin">Cinéma Renaissance</span>
+                          </div>
+                          <div class="time">
+                            <i class="ri-timer-2-fill"></i> <b>-1</b> j <b>-7</b> h <b>-45</b> m <b>-47</b> s
+                          </div>
+                          <div class="price ">
+                            <p id="price-text" class="roboto-thin">A partir de</p>
+                            <h2 class="roboto-bold ">150 <span class="roboto-light">mad</span>
+                            </h2>
+                          </div>
+                          <button class="book roboto-medium">J'achete</button>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="epuise roboto-bold">epuise</div>
+                        <div class="card-image blurry">
+                            <img src="https://gcdn.imgix.net/events/grande-soiree-soufie-avec-la-zaouia-kadirya-boutchichia-a-meknes-2.jpeg?w=900&h=600&fit=clip&auto=format,compress&q=80" alt="Event">
+                        </div>
+                        <div class="card-details">
+                          <div class="genre roboto-black">Concerts & Festival</div>
+                          <div class="title roboto-bold ">Grande soirée Soufie avec la ZAOUIA KADIRYA</div>
+                          <div class="location roboto-bold"><i class="ri-map-pin-2-fill"></i> Rabat, <span class="sub-location roboto-thin">Cinéma Renaissance</span>
+                          </div>
+                          <div class="time">
+                            <i class="ri-timer-2-fill"></i> <b>-1</b> j <b>-7</b> h <b>-45</b> m <b>-47</b> s
+                          </div>
+                          <div class="price ">
+                            <p id="price-text" class="roboto-thin">A partir de</p>
+                            <h2 class="roboto-bold ">150 <span class="roboto-light">mad</span>
+                            </h2>
+                          </div>
+                          <button disabled class="book-ferme roboto-medium">Guichet Ferme</button>
+                        </div>
+                      </div>
+                     
+                    <div class="card">
+                        <div class="card-image">
+                          <img src="https://gcdn.imgix.net/events/grande-soiree-soufie-avec-la-zaouia-kadirya-boutchichia-a-meknes-2.jpeg?w=900&h=600&fit=clip&auto=format,compress&q=80" alt="Event">
+                        </div>
+                        <div class="card-details">
+                          <div class="genre roboto-black">Concerts & Festival</div>
+                          <div class="title roboto-bold ">Grande soirée Soufie avec la ZAOUIA KADIRYA</div>
+                          <div class="location roboto-bold"><i class="ri-map-pin-2-fill"></i> Rabat, <span class="sub-location roboto-thin">Cinéma Renaissance</span>
+                          </div>
+                          <div class="time">
+                            <i class="ri-timer-2-fill"></i> <b>-1</b> j <b>-7</b> h <b>-45</b> m <b>-47</b> s
+                          </div>
+                          <div class="price ">
+                            <p id="price-text" class="roboto-thin">A partir de</p>
+                            <h2 class="roboto-bold ">150 <span class="roboto-light">mad</span>
+                            </h2>
+                          </div>
+                          <button class="book roboto-medium">J'achete</button>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="epuise roboto-bold">epuise</div>
+                        <div class="card-image blurry">
+                            <img src="https://gcdn.imgix.net/events/grande-soiree-soufie-avec-la-zaouia-kadirya-boutchichia-a-meknes-2.jpeg?w=900&h=600&fit=clip&auto=format,compress&q=80" alt="Event">
+                        </div>
+                        <div class="card-details">
+                          <div class="genre roboto-black">Concerts & Festival</div>
+                          <div class="title roboto-bold ">Grande soirée Soufie avec la ZAOUIA KADIRYA</div>
+                          <div class="location roboto-bold"><i class="ri-map-pin-2-fill"></i> Rabat, <span class="sub-location roboto-thin">Cinéma Renaissance</span>
+                          </div>
+                          <div class="time">
+                            <i class="ri-timer-2-fill"></i> <b>-1</b> j <b>-7</b> h <b>-45</b> m <b>-47</b> s
+                          </div>
+                          <div class="price ">
+                            <p id="price-text" class="roboto-thin">A partir de</p>
+                            <h2 class="roboto-bold ">150 <span class="roboto-light">mad</span>
+                            </h2>
+                          </div>
+                          <button disabled class="book-ferme roboto-medium">Guichet Ferme</button>
+                        </div>
+                      </div>
+                     
+                
+                <div class=""></div>
+                <div class=""></div>
+                </div>
+           
+            <div class="row">
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class="card">
+                        <div class="card-image">
+                          <img src="https://gcdn.imgix.net/events/grande-soiree-soufie-avec-la-zaouia-kadirya-boutchichia-a-meknes-2.jpeg?w=900&h=600&fit=clip&auto=format,compress&q=80" alt="Event">
+                        </div>
+                        <div class="card-details">
+                          <div class="genre roboto-black">Concerts & Festival</div>
+                          <div class="title roboto-bold ">Grande soirée Soufie avec la ZAOUIA KADIRYA</div>
+                          <div class="location roboto-bold"><i class="ri-map-pin-2-fill"></i> Rabat, <span class="sub-location roboto-thin">Cinéma Renaissance</span>
+                          </div>
+                          <div class="time">
+                            <i class="ri-timer-2-fill"></i> <b>-1</b> j <b>-7</b> h <b>-45</b> m <b>-47</b> s
+                          </div>
+                          <div class="price ">
+                            <p id="price-text" class="roboto-thin">A partir de</p>
+                            <h2 class="roboto-bold ">150 <span class="roboto-light">mad</span>
+                            </h2>
+                          </div>
+                          <button class="book roboto-medium">J'achete</button>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="epuise roboto-bold">epuise</div>
+                        <div class="card-image blurry">
+                            <img src="https://gcdn.imgix.net/events/grande-soiree-soufie-avec-la-zaouia-kadirya-boutchichia-a-meknes-2.jpeg?w=900&h=600&fit=clip&auto=format,compress&q=80" alt="Event">
+                        </div>
+                        <div class="card-details">
+                          <div class="genre roboto-black">Concerts & Festival</div>
+                          <div class="title roboto-bold ">Grande soirée Soufie avec la ZAOUIA KADIRYA</div>
+                          <div class="location roboto-bold"><i class="ri-map-pin-2-fill"></i> Rabat, <span class="sub-location roboto-thin">Cinéma Renaissance</span>
+                          </div>
+                          <div class="time">
+                            <i class="ri-timer-2-fill"></i> <b>-1</b> j <b>-7</b> h <b>-45</b> m <b>-47</b> s
+                          </div>
+                          <div class="price ">
+                            <p id="price-text" class="roboto-thin">A partir de</p>
+                            <h2 class="roboto-bold ">150 <span class="roboto-light">mad</span>
+                            </h2>
+                          </div>
+                          <button disabled class="book-ferme roboto-medium">Guichet Ferme</button>
+                        </div>
+                      </div>
+                     
+                    <div class="card">
+                        <div class="card-image">
+                          <img src="https://gcdn.imgix.net/events/grande-soiree-soufie-avec-la-zaouia-kadirya-boutchichia-a-meknes-2.jpeg?w=900&h=600&fit=clip&auto=format,compress&q=80" alt="Event">
+                        </div>
+                        <div class="card-details">
+                          <div class="genre roboto-black">Concerts & Festival</div>
+                          <div class="title roboto-bold ">Grande soirée Soufie avec la ZAOUIA KADIRYA</div>
+                          <div class="location roboto-bold"><i class="ri-map-pin-2-fill"></i> Rabat, <span class="sub-location roboto-thin">Cinéma Renaissance</span>
+                          </div>
+                          <div class="time">
+                            <i class="ri-timer-2-fill"></i> <b>-1</b> j <b>-7</b> h <b>-45</b> m <b>-47</b> s
+                          </div>
+                          <div class="price ">
+                            <p id="price-text" class="roboto-thin">A partir de</p>
+                            <h2 class="roboto-bold ">150 <span class="roboto-light">mad</span>
+                            </h2>
+                          </div>
+                          <button class="book roboto-medium">J'achete</button>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="epuise roboto-bold">epuise</div>
+                        <div class="card-image blurry">
+                            <img src="https://gcdn.imgix.net/events/grande-soiree-soufie-avec-la-zaouia-kadirya-boutchichia-a-meknes-2.jpeg?w=900&h=600&fit=clip&auto=format,compress&q=80" alt="Event">
+                        </div>
+                        <div class="card-details">
+                          <div class="genre roboto-black">Concerts & Festival</div>
+                          <div class="title roboto-bold ">Grande soirée Soufie avec la ZAOUIA KADIRYA</div>
+                          <div class="location roboto-bold"><i class="ri-map-pin-2-fill"></i> Rabat, <span class="sub-location roboto-thin">Cinéma Renaissance</span>
+                          </div>
+                          <div class="time">
+                            <i class="ri-timer-2-fill"></i> <b>-1</b> j <b>-7</b> h <b>-45</b> m <b>-47</b> s
+                          </div>
+                          <div class="price ">
+                            <p id="price-text" class="roboto-thin">A partir de</p>
+                            <h2 class="roboto-bold ">150 <span class="roboto-light">mad</span>
+                            </h2>
+                          </div>
+                          <button disabled class="book-ferme roboto-medium">Guichet Ferme</button>
+                        </div>
+                      </div>
+                     
+                
+                <div class=""></div>
+                <div class=""></div>
+                </div>
+           
+            <div class="row">
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class="card">
+                        <div class="card-image">
+                          <img src="https://gcdn.imgix.net/events/grande-soiree-soufie-avec-la-zaouia-kadirya-boutchichia-a-meknes-2.jpeg?w=900&h=600&fit=clip&auto=format,compress&q=80" alt="Event">
+                        </div>
+                        <div class="card-details">
+                          <div class="genre roboto-black">Concerts & Festival</div>
+                          <div class="title roboto-bold ">Grande soirée Soufie avec la ZAOUIA KADIRYA</div>
+                          <div class="location roboto-bold"><i class="ri-map-pin-2-fill"></i> Rabat, <span class="sub-location roboto-thin">Cinéma Renaissance</span>
+                          </div>
+                          <div class="time">
+                            <i class="ri-timer-2-fill"></i> <b>-1</b> j <b>-7</b> h <b>-45</b> m <b>-47</b> s
+                          </div>
+                          <div class="price ">
+                            <p id="price-text" class="roboto-thin">A partir de</p>
+                            <h2 class="roboto-bold ">150 <span class="roboto-light">mad</span>
+                            </h2>
+                          </div>
+                          <button class="book roboto-medium">J'achete</button>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="epuise roboto-bold">epuise</div>
+                        <div class="card-image blurry">
+                            <img src="https://gcdn.imgix.net/events/grande-soiree-soufie-avec-la-zaouia-kadirya-boutchichia-a-meknes-2.jpeg?w=900&h=600&fit=clip&auto=format,compress&q=80" alt="Event">
+                        </div>
+                        <div class="card-details">
+                          <div class="genre roboto-black">Concerts & Festival</div>
+                          <div class="title roboto-bold ">Grande soirée Soufie avec la ZAOUIA KADIRYA</div>
+                          <div class="location roboto-bold"><i class="ri-map-pin-2-fill"></i> Rabat, <span class="sub-location roboto-thin">Cinéma Renaissance</span>
+                          </div>
+                          <div class="time">
+                            <i class="ri-timer-2-fill"></i> <b>-1</b> j <b>-7</b> h <b>-45</b> m <b>-47</b> s
+                          </div>
+                          <div class="price ">
+                            <p id="price-text" class="roboto-thin">A partir de</p>
+                            <h2 class="roboto-bold ">150 <span class="roboto-light">mad</span>
+                            </h2>
+                          </div>
+                          <button disabled class="book-ferme roboto-medium">Guichet Ferme</button>
+                        </div>
+                      </div>
+                     
+                    <div class="card">
+                        <div class="card-image">
+                          <img src="https://gcdn.imgix.net/events/grande-soiree-soufie-avec-la-zaouia-kadirya-boutchichia-a-meknes-2.jpeg?w=900&h=600&fit=clip&auto=format,compress&q=80" alt="Event">
+                        </div>
+                        <div class="card-details">
+                          <div class="genre roboto-black">Concerts & Festival</div>
+                          <div class="title roboto-bold ">Grande soirée Soufie avec la ZAOUIA KADIRYA</div>
+                          <div class="location roboto-bold"><i class="ri-map-pin-2-fill"></i> Rabat, <span class="sub-location roboto-thin">Cinéma Renaissance</span>
+                          </div>
+                          <div class="time">
+                            <i class="ri-timer-2-fill"></i> <b>-1</b> j <b>-7</b> h <b>-45</b> m <b>-47</b> s
+                          </div>
+                          <div class="price ">
+                            <p id="price-text" class="roboto-thin">A partir de</p>
+                            <h2 class="roboto-bold ">150 <span class="roboto-light">mad</span>
+                            </h2>
+                          </div>
+                          <button class="book roboto-medium">J'achete</button>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="epuise roboto-bold">epuise</div>
+                        <div class="card-image blurry">
+                            <img src="https://gcdn.imgix.net/events/grande-soiree-soufie-avec-la-zaouia-kadirya-boutchichia-a-meknes-2.jpeg?w=900&h=600&fit=clip&auto=format,compress&q=80" alt="Event">
+                        </div>
+                        <div class="card-details">
+                          <div class="genre roboto-black">Concerts & Festival</div>
+                          <div class="title roboto-bold ">Grande soirée Soufie avec la ZAOUIA KADIRYA</div>
+                          <div class="location roboto-bold"><i class="ri-map-pin-2-fill"></i> Rabat, <span class="sub-location roboto-thin">Cinéma Renaissance</span>
+                          </div>
+                          <div class="time">
+                            <i class="ri-timer-2-fill"></i> <b>-1</b> j <b>-7</b> h <b>-45</b> m <b>-47</b> s
+                          </div>
+                          <div class="price ">
+                            <p id="price-text" class="roboto-thin">A partir de</p>
+                            <h2 class="roboto-bold ">150 <span class="roboto-light">mad</span>
+                            </h2>
+                          </div>
+                          <button disabled class="book-ferme roboto-medium">Guichet Ferme</button>
+                        </div>
+                      </div>
+                     
+                
+                <div class=""></div>
+                <div class=""></div>
+                </div>
+           
+            <div class="row">
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class="card">
+                        <div class="card-image">
+                          <img src="https://gcdn.imgix.net/events/grande-soiree-soufie-avec-la-zaouia-kadirya-boutchichia-a-meknes-2.jpeg?w=900&h=600&fit=clip&auto=format,compress&q=80" alt="Event">
+                        </div>
+                        <div class="card-details">
+                          <div class="genre roboto-black">Concerts & Festival</div>
+                          <div class="title roboto-bold ">Grande soirée Soufie avec la ZAOUIA KADIRYA</div>
+                          <div class="location roboto-bold"><i class="ri-map-pin-2-fill"></i> Rabat, <span class="sub-location roboto-thin">Cinéma Renaissance</span>
+                          </div>
+                          <div class="time">
+                            <i class="ri-timer-2-fill"></i> <b>-1</b> j <b>-7</b> h <b>-45</b> m <b>-47</b> s
+                          </div>
+                          <div class="price ">
+                            <p id="price-text" class="roboto-thin">A partir de</p>
+                            <h2 class="roboto-bold ">150 <span class="roboto-light">mad</span>
+                            </h2>
+                          </div>
+                          <button class="book roboto-medium">J'achete</button>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="epuise roboto-bold">epuise</div>
+                        <div class="card-image blurry">
+                            <img src="https://gcdn.imgix.net/events/grande-soiree-soufie-avec-la-zaouia-kadirya-boutchichia-a-meknes-2.jpeg?w=900&h=600&fit=clip&auto=format,compress&q=80" alt="Event">
+                        </div>
+                        <div class="card-details">
+                          <div class="genre roboto-black">Concerts & Festival</div>
+                          <div class="title roboto-bold ">Grande soirée Soufie avec la ZAOUIA KADIRYA</div>
+                          <div class="location roboto-bold"><i class="ri-map-pin-2-fill"></i> Rabat, <span class="sub-location roboto-thin">Cinéma Renaissance</span>
+                          </div>
+                          <div class="time">
+                            <i class="ri-timer-2-fill"></i> <b>-1</b> j <b>-7</b> h <b>-45</b> m <b>-47</b> s
+                          </div>
+                          <div class="price ">
+                            <p id="price-text" class="roboto-thin">A partir de</p>
+                            <h2 class="roboto-bold ">150 <span class="roboto-light">mad</span>
+                            </h2>
+                          </div>
+                          <button disabled class="book-ferme roboto-medium">Guichet Ferme</button>
+                        </div>
+                      </div>
+                     
+                    <div class="card">
+                        <div class="card-image">
+                          <img src="https://gcdn.imgix.net/events/grande-soiree-soufie-avec-la-zaouia-kadirya-boutchichia-a-meknes-2.jpeg?w=900&h=600&fit=clip&auto=format,compress&q=80" alt="Event">
+                        </div>
+                        <div class="card-details">
+                          <div class="genre roboto-black">Concerts & Festival</div>
+                          <div class="title roboto-bold ">Grande soirée Soufie avec la ZAOUIA KADIRYA</div>
+                          <div class="location roboto-bold"><i class="ri-map-pin-2-fill"></i> Rabat, <span class="sub-location roboto-thin">Cinéma Renaissance</span>
+                          </div>
+                          <div class="time">
+                            <i class="ri-timer-2-fill"></i> <b>-1</b> j <b>-7</b> h <b>-45</b> m <b>-47</b> s
+                          </div>
+                          <div class="price ">
+                            <p id="price-text" class="roboto-thin">A partir de</p>
+                            <h2 class="roboto-bold ">150 <span class="roboto-light">mad</span>
+                            </h2>
+                          </div>
+                          <button class="book roboto-medium">J'achete</button>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="epuise roboto-bold">epuise</div>
+                        <div class="card-image blurry">
+                            <img src="https://gcdn.imgix.net/events/grande-soiree-soufie-avec-la-zaouia-kadirya-boutchichia-a-meknes-2.jpeg?w=900&h=600&fit=clip&auto=format,compress&q=80" alt="Event">
+                        </div>
+                        <div class="card-details">
+                          <div class="genre roboto-black">Concerts & Festival</div>
+                          <div class="title roboto-bold ">Grande soirée Soufie avec la ZAOUIA KADIRYA</div>
+                          <div class="location roboto-bold"><i class="ri-map-pin-2-fill"></i> Rabat, <span class="sub-location roboto-thin">Cinéma Renaissance</span>
+                          </div>
+                          <div class="time">
+                            <i class="ri-timer-2-fill"></i> <b>-1</b> j <b>-7</b> h <b>-45</b> m <b>-47</b> s
+                          </div>
+                          <div class="price ">
+                            <p id="price-text" class="roboto-thin">A partir de</p>
+                            <h2 class="roboto-bold ">150 <span class="roboto-light">mad</span>
+                            </h2>
+                          </div>
+                          <button disabled class="book-ferme roboto-medium">Guichet Ferme</button>
+                        </div>
+                      </div>
+                     
+                
+                <div class=""></div>
+                <div class=""></div>
+                </div>
+           
+            <div class="row">
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class="card">
+                        <div class="card-image">
+                          <img src="https://gcdn.imgix.net/events/grande-soiree-soufie-avec-la-zaouia-kadirya-boutchichia-a-meknes-2.jpeg?w=900&h=600&fit=clip&auto=format,compress&q=80" alt="Event">
+                        </div>
+                        <div class="card-details">
+                          <div class="genre roboto-black">Concerts & Festival</div>
+                          <div class="title roboto-bold ">Grande soirée Soufie avec la ZAOUIA KADIRYA</div>
+                          <div class="location roboto-bold"><i class="ri-map-pin-2-fill"></i> Rabat, <span class="sub-location roboto-thin">Cinéma Renaissance</span>
+                          </div>
+                          <div class="time">
+                            <i class="ri-timer-2-fill"></i> <b>-1</b> j <b>-7</b> h <b>-45</b> m <b>-47</b> s
+                          </div>
+                          <div class="price ">
+                            <p id="price-text" class="roboto-thin">A partir de</p>
+                            <h2 class="roboto-bold ">150 <span class="roboto-light">mad</span>
+                            </h2>
+                          </div>
+                          <button class="book roboto-medium">J'achete</button>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="epuise roboto-bold">epuise</div>
+                        <div class="card-image blurry">
+                            <img src="https://gcdn.imgix.net/events/grande-soiree-soufie-avec-la-zaouia-kadirya-boutchichia-a-meknes-2.jpeg?w=900&h=600&fit=clip&auto=format,compress&q=80" alt="Event">
+                        </div>
+                        <div class="card-details">
+                          <div class="genre roboto-black">Concerts & Festival</div>
+                          <div class="title roboto-bold ">Grande soirée Soufie avec la ZAOUIA KADIRYA</div>
+                          <div class="location roboto-bold"><i class="ri-map-pin-2-fill"></i> Rabat, <span class="sub-location roboto-thin">Cinéma Renaissance</span>
+                          </div>
+                          <div class="time">
+                            <i class="ri-timer-2-fill"></i> <b>-1</b> j <b>-7</b> h <b>-45</b> m <b>-47</b> s
+                          </div>
+                          <div class="price ">
+                            <p id="price-text" class="roboto-thin">A partir de</p>
+                            <h2 class="roboto-bold ">150 <span class="roboto-light">mad</span>
+                            </h2>
+                          </div>
+                          <button disabled class="book-ferme roboto-medium">Guichet Ferme</button>
+                        </div>
+                      </div>
+                     
+                    <div class="card">
+                        <div class="card-image">
+                          <img src="https://gcdn.imgix.net/events/grande-soiree-soufie-avec-la-zaouia-kadirya-boutchichia-a-meknes-2.jpeg?w=900&h=600&fit=clip&auto=format,compress&q=80" alt="Event">
+                        </div>
+                        <div class="card-details">
+                          <div class="genre roboto-black">Concerts & Festival</div>
+                          <div class="title roboto-bold ">Grande soirée Soufie avec la ZAOUIA KADIRYA</div>
+                          <div class="location roboto-bold"><i class="ri-map-pin-2-fill"></i> Rabat, <span class="sub-location roboto-thin">Cinéma Renaissance</span>
+                          </div>
+                          <div class="time">
+                            <i class="ri-timer-2-fill"></i> <b>-1</b> j <b>-7</b> h <b>-45</b> m <b>-47</b> s
+                          </div>
+                          <div class="price ">
+                            <p id="price-text" class="roboto-thin">A partir de</p>
+                            <h2 class="roboto-bold ">150 <span class="roboto-light">mad</span>
+                            </h2>
+                          </div>
+                          <button class="book roboto-medium">J'achete</button>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="epuise roboto-bold">epuise</div>
+                        <div class="card-image blurry">
+                            <img src="https://gcdn.imgix.net/events/grande-soiree-soufie-avec-la-zaouia-kadirya-boutchichia-a-meknes-2.jpeg?w=900&h=600&fit=clip&auto=format,compress&q=80" alt="Event">
+                        </div>
+                        <div class="card-details">
+                          <div class="genre roboto-black">Concerts & Festival</div>
+                          <div class="title roboto-bold ">Grande soirée Soufie avec la ZAOUIA KADIRYA</div>
+                          <div class="location roboto-bold"><i class="ri-map-pin-2-fill"></i> Rabat, <span class="sub-location roboto-thin">Cinéma Renaissance</span>
+                          </div>
+                          <div class="time">
+                            <i class="ri-timer-2-fill"></i> <b>-1</b> j <b>-7</b> h <b>-45</b> m <b>-47</b> s
+                          </div>
+                          <div class="price ">
+                            <p id="price-text" class="roboto-thin">A partir de</p>
+                            <h2 class="roboto-bold ">150 <span class="roboto-light">mad</span>
+                            </h2>
+                          </div>
+                          <button disabled class="book-ferme roboto-medium">Guichet Ferme</button>
+                        </div>
+                      </div>
+                     
+                
+                <div class=""></div>
+                <div class=""></div>
+                </div>
+           
+          
+        </div>
+    </main>
+    <section class="features">
+        <div class="block"></div>
+       
+        <div class="feature">
+            <img src="https://cdn-icons-png.flaticon.com/512/15410/15410202.png" alt="feature">
+            <h2 class="roboto-bold">Achetez des tickets</h2>
+            <h4 class="roboto-thin">Achetez des tickets de qualité pour les meilleurs événements en toute
+                sécurité !
+            <br><br>
+            </h4>
+        </div>
+        <div class="feature">
+            <img src="https://cdn-icons-png.flaticon.com/512/3395/3395949.png" alt="feature">
+            <h2 class="roboto-bold">Notre garantie 100 %</h2>
+            <h4 class="roboto-thin">Éliminez les risques et assurez-vous une transaction sécurisée et
+                protégée en faisant affaire avec guichet.com
+            </h4>
+        </div>
+        <div class="feature">
+            <img src="https://cdn-icons-png.flaticon.com/512/1067/1067566.png" alt="feature">
+            <h2 class="roboto-bold">Support 24/24H</h2>
+            <h4 class="roboto-thin">+212 6 45 765 765 / sav@guichet.ma
+                <br><br><br>
+            </h4>
+        </div>
+        <div class="block"></div>
+     
+    </section>
+    <section class="footer">
+        <div class="footer-left">
+            <img src="https://www.guichet.com/static/media/logo.a21b450f74466c794f4f.png" alt="LOGO_GUICHET">
+            <p>Un site de billetterie nouvelle génération vous offrant la possibilité
+                d’acheter en ligne des tickets pour les événements de votre choix.
+                Sa vocation est de vous proposer l’offre de concerts, sports,
+                spectacles, cinéma, festivals, théâtre, humour, voyages et evasions
+                la plus large du Maroc en collaboration avec les organisateurs
+                d’événements.</p>
+                <h2>Nos applications</h2>
+                <div class="apps">
+                     <img src="data:image/png;base64,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" alt="LOGO">
+                <p>Guichet Android</p>
+                </div>
+                <div class="apps ios">
+                     <img src="data:image/png;base64,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" alt="LOGO">
+                <p>Guichet iOS</p>
+                </div>
+                <h3>Vous êtes à l’étranger ?</h3>
+                <div class="country">
+                    <div class="">
+                        <img src="https://static-00.iconduck.com/assets.00/morocco-icon-512x384-w9i7roa6.png" alt="morocco">
+                        <p>Maroc</p>
+
+                    </div>
+                    <i class="ri-arrow-down-s-line"></i>
+                </div>
+        </div>
+        <div class="footer-right">
+            <div class="ref">
+                <h2>Guichet</h2>
+            
+                <p>Concerts & Festivals <br>
+                Théâtre & Humour <br>
+                    Formations <br>
+                    Salons et congrès <br>
+                    Famille & Loisirs <br>
+                    Sport <br>
+                    Cinéma <br>
+                    Voyage</p>
+            </div>
+            <div class="ref">
+                <h2>Gstore</h2>
+                <p>Coffrets Cadeaux <br>
+                    Bon plan <br>
+                    Sport <br>
+                    Gaming <br>
+                    High-Tech <br> 
+                    Produits dérivées <br>
+                     Tendances et Déguisements</p>
+            </div>
+            <div class="ref">
+                <h2>à propos</h2>
+                <p>Qui sommes nous? <br>
+                    Contactez-nous <br>
+                    Guichet Magazine <br>
+                    Mentions légales</p>
+            </div>
+            <div class="container">
+
+                <h1>Inscrivez-vous à la newsletter Guichet</h1>
+                <h4 class="roboto-thin">Vous soyez alertés en amont des meilleurs plans, spectacles, concerts, festivals, etc</h3>
+                    
+                <div class="contact">
+                        <div class="email">
+                            <h4>Adresse email</h4>
+    
+                        </div>
+                        <div class="apps">
+                            
+                            <h3>S'INSCRIRE</h3>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="copyright">
+        <h3>Copyright 2023 © Guichet.ma - Tous droits réservés.</h3>
+        <img src="https://www.guichet.com/static/media/payment-logos.b5da52a283a4dde18602.png" alt="sponsor">
+        <ul>
+
+            <i class="ri-facebook-fill"></i>
+            <i class="ri-instagram-line"></i>
+            <i class="ri-linkedin-fill"></i>
+            <i class="ri-twitter-x-fill"></i>
+        </ul>
+    </section>
+    <div class="quickchat">
+        <i class="ri-customer-service-fill"></i>
+    </div>
+</body>
+</html>
